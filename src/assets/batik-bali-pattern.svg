@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" fill="none">
+  <defs>
+    <pattern id="bali" width="110" height="110" patternUnits="userSpaceOnUse">
+      <g opacity="0.09" stroke="#2757A4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M55 9c-7 8-7 17 0 25 7-8 7-17 0-25Z" fill="#F6DB00"/>
+        <path d="M55 76c-7-8-7-17 0-25 7 8 7 17 0 25Z" fill="#F6DB00"/>
+        <path d="M9 55c8-7 17-7 25 0-8 7-17 7-25 0Z" fill="#F6DB00"/>
+        <path d="M101 55c-8-7-17-7-25 0 8 7 17 7 25 0Z" fill="#F6DB00"/>
+        <path d="M22 22c11 0 18 6 22 17-11 0-18-6-22-17Z" fill="#198BCC"/>
+        <path d="M88 22c-11 0-18 6-22 17 11 0 18-6 22-17Z" fill="#198BCC"/>
+        <path d="M22 88c11 0 18-6 22-17-11 0-18 6-22 17Z" fill="#198BCC"/>
+        <path d="M88 88c-11 0-18-6-22-17 11 0 18 6 22 17Z" fill="#198BCC"/>
+        <path d="M55 37c-8 0-14 7-14 14 0 8 6 14 14 14s14-6 14-14c0-7-6-14-14-14Z" fill="#F6DB00"/>
+        <path d="M55 43v16M47 51h16"/>
+        <path d="M37 37c-7-3-13-1-17 5M73 37c7-3 13-1 17 5M37 73c-7 3-13 1-17-5M73 73c7 3 13 1 17-5"/>
+        <circle cx="55" cy="51" r="3" fill="#2757A4"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="220" height="220" fill="url(#bali)"/>
+</svg>

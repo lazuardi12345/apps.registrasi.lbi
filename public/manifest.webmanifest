@@ -1,0 +1,16 @@
+{
+  "name": "LBI FIB UI",
+  "short_name": "LBI FIB UI",
+  "description": "Lembaga Bahasa Internasional Fakultas Ilmu Pengetahuan Budaya Universitas Indonesia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003366",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
