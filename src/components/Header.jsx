@@ -7,7 +7,8 @@ import { useAuth } from "../context/AuthContext";
 import api from "../services/api";
 
 const STAFF_ROLES = new Set(["administrator", "admin", "marketing", "content_writer", "finance", "admin_ppb", "admin_bipa", "admin_ppp", "reviewer", "teacher"]);
-const ADMIN_DASHBOARD_URL = import.meta.env.VITE_ADMIN_DASHBOARD_URL || "http://localhost:5174";
+const ADMIN_DASHBOARD_URL =
+  import.meta.env.VITE_ADMIN_DASHBOARD_URL || (import.meta.env.DEV ? "http://localhost:5174" : "");
 
 function isStaffUser(user) {
   return Boolean(user?.role && (STAFF_ROLES.has(user.role) || (user.role !== "student" && user.role !== "peserta")));
@@ -90,8 +91,12 @@ export default function Header({ theme, toggleTheme, onOpenAuth }) {
       onOpenAuth && onOpenAuth("login");
       return;
     }
+    if (!ADMIN_DASHBOARD_URL) {
+      window.alert("URL Admin Dashboard belum dikonfigurasi untuk production.");
+      return;
+    }
     const adminUrl = `${ADMIN_DASHBOARD_URL}/#auth_token=${encodeURIComponent(token)}`;
-    window.open(adminUrl, "_blank");
+    window.open(adminUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleLogout = () => {

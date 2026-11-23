@@ -24,8 +24,11 @@ Vite starts the development server at `http://localhost:5173`.
 | --- | --- |
 | `VITE_API_BASE_URL` | Backend API base URL, including `/api/v1` |
 | `VITE_STORAGE_BASE_URL` | Backend base URL used for uploaded assets |
+| `VITE_ADMIN_DASHBOARD_URL` | Admin Dashboard origin opened from the signed-in staff profile; use `http://localhost:5174` only for local development |
 
 Set these values in the deployment environment. Do not commit `.env` files or credentials.
+
+For Vercel, set `VITE_API_BASE_URL`, `VITE_STORAGE_BASE_URL`, and `VITE_ADMIN_DASHBOARD_URL` in the Landing project's environment variables to the production API and Admin Dashboard URLs. Vite embeds `VITE_*` values at build time, so redeploy after changing them. Staff sign in on the Landing page and open **Admin Dashboard** from their profile menu.
 
 ## Production build
 

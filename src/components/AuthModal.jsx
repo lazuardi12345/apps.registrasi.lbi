@@ -2,12 +2,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
-const ADMIN_DASHBOARD_URL = import.meta.env.VITE_ADMIN_DASHBOARD_URL || 'http://localhost:5174';
-
-function isStaffUser(user) {
-  return Boolean(user?.role && user.role !== 'student' && user.role !== 'peserta');
-}
-
 export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAuthSuccess, redirectNote = null }) {
   const [mode, setMode] = useState(initialMode); // 'login' | 'register'
   const [name, setName] = useState('');
@@ -32,11 +26,6 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login', onAu
       if (mode === 'login') {
         const result = await login(email, password);
         if (result.success) {
-          if (isStaffUser(result.user)) {
-            const token = localStorage.getItem('lbi_auth_token') || result.token;
-            const adminUrl = `${ADMIN_DASHBOARD_URL}/#auth_token=${encodeURIComponent(token)}`;
-            window.open(adminUrl, '_blank', 'noopener,noreferrer');
-          }
           if (onAuthSuccess) onAuthSuccess(result.user);
           onClose();
         } else {
