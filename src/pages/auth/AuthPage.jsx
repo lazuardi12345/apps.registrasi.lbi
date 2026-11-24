@@ -9,10 +9,10 @@ const highlights = [
   { icon: 'ti ti-certificate', title: 'Sertifikat tersimpan', text: 'Akses status dan sertifikat kursus dengan lebih praktis.' },
 ];
 
-const ADMIN_ROLES = ['administrator', 'admin', 'marketing', 'content_writer', 'finance', 'admin_ppb', 'admin_bipa', 'admin_ppp', 'reviewer', 'teacher'];
+const ADMIN_ROLES = new Set(['administrator', 'admin', 'marketing', 'content_writer', 'finance', 'admin_ppb', 'admin_bipa', 'admin_ppp', 'reviewer', 'teacher']);
 
 function isStaffUser(user) {
-  return Boolean(user?.role && (ADMIN_ROLES.includes(user.role) || (user.role !== 'student' && user.role !== 'peserta')));
+  return Boolean(user?.role && ADMIN_ROLES.has(user.role));
 }
 
 export default function AuthPage({ mode }) {

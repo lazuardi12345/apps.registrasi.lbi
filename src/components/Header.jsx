@@ -11,7 +11,7 @@ const ADMIN_DASHBOARD_URL =
   import.meta.env.VITE_ADMIN_DASHBOARD_URL || (import.meta.env.DEV ? "http://localhost:5174" : "");
 
 function isStaffUser(user) {
-  return Boolean(user?.role && (STAFF_ROLES.has(user.role) || (user.role !== "student" && user.role !== "peserta")));
+  return Boolean(user?.role && STAFF_ROLES.has(user.role));
 }
 
 export default function Header({ theme, toggleTheme, onOpenAuth }) {
